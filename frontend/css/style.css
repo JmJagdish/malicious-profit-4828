@@ -1,160 +1,135 @@
-:root{
-    --color-1: #2f3240;
-}
-body{
-	font-family: sans-serif;
-	background-color: white;
-}
-*{
-	box-sizing: border-box;
-	margin:0;
-	padding:0;
-}
-ul{
-	list-style: none;
-}
 a{
 	text-decoration: none;
 }
-.container{
-	/* max-width: 1170px; */
-	margin:auto;
+
+.navbar{
+	background-color: #9bdef3;
+	height: 100px;
 }
-.row{
-	display: flex;
-	flex-wrap: wrap;
-}
-.align-items-center{
-	align-items: center;
-}
-.justify-content-between{
-	justify-content: space-between;
-}
-/*header*/
-.header{
-	background-color: var(--color-1);
-	padding: 12px 0;
-	line-height: 1.5;
+.btn{
+	color: black;
 }
 
-.header .logo,
-.header .nav{
-	padding:0px 0px 0px 15px;
-} 
-.header .logo > a > img{
-    height: 60px;
-    width: 120px;
-    margin: 0%;
-    padding: 0%;
-}
+/* ******************************************************PRODUCT SLIDER*************************************************************** */
+* {box-sizing:border-box}
 
-.header .nav ul li{
-	display: inline-block;
-	margin-left: 40px;
+/* Slideshow container */
+.slideshow-container {
+  width: 90%;
+  position: relative;
+  margin: auto;
+  margin-top: 90px;
 }
-.header .nav ul li a{
-	display: block;
-	font-size: 16px;
-	text-transform: capitalize;
-	color: #ffffff;
-	padding: 10px 0;
-	transition: all 0.5s ease;
-}
-.header .nav ul li a.active,
-.header .nav ul li a:hover{
-	color: #f3a93d;
-}
-.nav-toggler{
-	height: 34px;
-	width: 44px;
-	background-color: #ffffff;
-	border-radius: 4px;
-	cursor: pointer;
-	border:none;
-	display: none;
-	margin-right: 15px;
-}
-.nav-toggler:focus{
-	outline: none;
-	box-shadow: 0 0 15px rgba(255,255,255,0.5);
-}
-.nav-toggler span{
-    height: 2px;
-    width: 20px;
-    background-color: var(--color-1);
-    display: block;
-    margin:auto;
-    position: relative;
-    transition: all 0.3s ease;
-}
-.nav-toggler.active span{
-	background-color: transparent;
-}
-.nav-toggler span::before,
-.nav-toggler span::after{
-	content: '';
-	position: absolute;
-	left:0;
-	top:0;
+.mySlides > img{
+	height:300px;
 	width: 100%;
-	height: 100%;
-	background-color: var(--color-1);
-	transition: all 0.3s ease;
+	border: 1px solid red;
 }
-.nav-toggler span::before{
-	transform: translateY(-6px);
-}
-.nav-toggler.active span::before{
-	transform: rotate(45deg);
-}
-.nav-toggler span::after{
-	transform: translateY(6px);
-}
-.nav-toggler.active span::after{
-	transform: rotate(135deg);
-}
-@media(max-width:991px){
-   .nav-toggler{
-   	display: block;
-   }
-   .header .nav{
-   	width: 100%;
-   	padding:0;
-   	max-height: 0px;
-   	overflow: hidden;
-   	visibility: hidden;
-   	transition: all 0.5s ease;
-   }
-   .header .nav.open{
-   	visibility: visible;
-   }
-   .header .nav ul{
-   	padding:12px 15px 0;
-   	margin-top: 12px;
-   	border-top:1px solid rgba(255,255,255,0.2);
-   }
-   .header .nav ul li{
-   	display: block;
-   	margin:0;
-   }
-}
-#popular{
-	margin-top: 90px;
-	height: 250px;
-	justify-content: center;
+/* Hide the images by default */
+/* .mySlides {
+  display: none;
+} */
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
 }
 
-.col > a > h6{
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* ****************************************************** Popular Product ************************************************************* */
+#popular{
+	width: 90%;
+	margin: auto;
+	margin-top: 90px;
+	justify-content: center;
+	border: 1px solid red;
+}
+.popular-content{
+	padding-left: 10px;
+}
+
+.rows{
+	display: grid;
+	grid-template-columns: repeat(7,1fr);
+	gap: 10px;
+}
+
+.cols > a > h6{
 	color: black;
 	font-size: 0.9pc;
 	font-weight: bold;
 	padding-top: 6px;
 }
-#popular img:hover{
-	height: 153px;
-	width: 153px;
-}
-#popular .col:hover{
+
+#popular .cols:hover{
 	text-decoration: underline;
 }
 
@@ -167,21 +142,141 @@ a{
 	width: 150px;
 }
 
-footer{
+#popular img:hover{
+	height: 153px;
+	width: 153px;
+}
+
+
+/* ****************************************************** discount 40% ************************************************************* */
+
+#discount{
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	gap: 10px;
+	width: 90%;
+	border: 1px solid red;
+	margin: auto;
+	margin-top: 90px;
+	background-color: #FEB887;
+	padding: 20px;
+	color: #781B19;
+}
+.discount-img{
+	display: flex;
+	align-items: center;
+}
+.discount-img > img{
+	height: 90px;
+	width: 90px;
+}
+.discount-content{
+    width: 900px;
+	margin: auto;
+}
+.btn1{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btn1 > .btn{
+	border:1px solid #781B19;
+	border-radius: 0%;
+	color: #781B19;
+	height: 45px;
+	width: 130px;
+}
+.btn1 > .btn:hover{
+	color: #FEB887;
+	background-color: #781B19;
+}
+
+/* ****************************************************** fitness-gedgets ************************************************************* */
+
+#fitness-gedgets{
+	width: 90%;
+	margin: auto;
+	margin-top: 90px;
+	height: 300px;
+	padding-left: 30px;
+	background-image: url("https://i.ebayimg.com/images/g/9DIAAOSwq-Fj7Z56/s-l1600.webp");
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+	color: #781B19;
+}
+#fitness-gedgets > h1{
+    padding-top: 10px;
+}
+
+#fitness-gedgets > .btn{
+	border:1px solid #781B19;
+	border-radius: 0%;
+	color: #781B19;
+	background-color: #FDCD25;
+	height: 45px;
+	width: 150px;
+}
+#fitness-gedgets > .btn:hover{
+    color: #FDCD25;
+	background-color: #781B19;
+}
+
+/* ****************************************************** Cycle Products ************************************************************* */
+
+#cycle{
+	width: 90%;
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	margin:auto;
+	margin-top: 90px;
+	border: 1px solid red;
+	color: #21491C;
+}
+#cycle > .cycle-content{
+	padding-left: 30px;
+	padding-top: 10px;
+}
+
+#cycle > .cycle-img{
+	width: 1000px;
+}
+#cycle > .cycle-img > img{
+	width:100%;
+	height: 300px;
+}
+
+.cycle-content > .btn{
+	border:1px solid #21491C;
+	border-radius: 0%;
+	color: #21491C;
+	background-color: white;
+	height: 45px;
+	width: 150px;
+}
+
+.cycle-content > .btn:hover{
+	background-color: #21491C;
+    color: #BFD82B;
+}
+
+
+
+/********************************************************* footer *******************************************************************************/
+#footer-container{
     justify-content: center;
 	align-items: flex-start;
     margin: auto;
-    width: 100%;
-	height: 400px;
-    margin-top: 70px;
-	background-color: white;
-	margin-top: 60px;
-	background-color: #f0eae0;
-	padding-top: 70px;
+    width: 90%;
+	padding-top: 60px;
+}
+#footer-container > .rows{
+	display: grid;
+	grid-template-columns: repeat(5,1fr);
+	margin: auto;
 }
 
-#container{
-	width: 100%;
+footer{
+	margin-top: 90px;
 }
 
 footer > div > div > div > div  >  div a {
@@ -206,6 +301,219 @@ footer a:hover{
 footer p{
 	color: #736f72;
 	font-size: small;
+}
+
+/* ****************************************************** Tablet screen ************************************************************* */
+
+
+@media all and (min-width:768px) and (max-width:1024px) {
+	.cycle-content > .btn{
+		height: 40px;
+		width: 120px;
+	}
+	#fitness-gedgets > .btn{
+		height: 40px;
+		width: 140px;
+	}
+	.btn1 > .btn{
+		height: 40px;
+		width: 120px;
+	}
+	.rows{
+		display: grid;
+		grid-template-columns: repeat(3,1fr);
+		row-gap: 10px;
+		column-gap: 10px;
+	}
+	#popular img{
+		height: 120px;
+		width: 120px;
+	}
+
+	#popular img:hover{
+		height: 123px;
+		width: 123px;
+	}
+	#popular .popular h1{
+		font-size: large;
+	}
+
+	#discount{
+		display: grid;
+		grid-template-columns: repeat(3,1fr);
+		gap: 5px;
+		width: 90%;
+		border: 1px solid red;
+		margin: auto;
+		margin-top: 40px;
+		background-color: #FEB887;
+		padding: 10px;
+	}
+	.discount-img{
+		display: flex;
+		align-items: left;
+	}
+	.discount-img > img{
+		height: 90px;
+		width: 90px;
+	}
+	.discount-content{
+		width: 500px;
+		margin: auto;
+	}
+	.discount-content > h3{
+		font-size: medium;
+	}
+	.btn1{
+		display: flex;
+		justify-content: start;
+	}
+	#footer-container > .rows{
+		display: grid;
+		grid-template-columns: repeat(3,1fr);
+		margin: auto;
+	}
+	.hide > a{
+	    font-size: 0;
+	}
+	#cycle{
+		width: 90%;
+		display: grid;
+		grid-template-columns: repeat(1,1fr);
+		margin:auto;
+		margin-top: 50px;
+	}
+	#cycle h1{
+		font-size: large;
+	}
+	#cycle > .cycle-img{
+		width: 100%;
+	}
+	#cycle .cycle-img > img{
+		width: 100%;
+		padding-top: 10px;
+		height: 220px;
+	}
+	#fitness-gedgets{
+		margin-top: 60px;
+		height: 250px;
+	}
+	#fitness-gedgets > h1{
+		font-size: large;
+	}
+}
+
+
+
+
+/* ****************************************************** Mobile screen ************************************************************* */
+
+
+@media all and (min-width:100px) and (max-width:767px) {
+	.cycle-content > .btn{
+		height: 40px;
+		width: 120px;
+	}
+	#fitness-gedgets > .btn{
+		height: 40px;
+		width: 120px;
+		padding: 0%;
+	}
+	.btn1 > .btn{
+		height: 40px;
+		width: 120px;
+	}
+	.rows{
+		display: grid;
+		grid-template-columns: repeat(2,1fr);
+		row-gap: 10px;
+		column-gap: 10px;
+	}
+	#popular img{
+		height: 100px;
+		width: 100px;
+	}
+	#popular img:hover{
+		height: 102px;
+		width: 102px;
+	}
+	#popular .popular h1{
+		font-size: large;
+	}
+
+	#discount{
+		display: grid;
+		grid-template-columns: repeat(1,1fr);
+		gap: 5px;
+		width: 90%;
+		border: 1px solid red;
+		margin: auto;
+		margin-top: 40px;
+		background-color: #FEB887;
+		padding: 10px;
+	}
+	.discount-img{
+		display: flex;
+		align-items: left;
+	}
+	.discount-img > img{
+		height: 90px;
+		width: 90px;
+	}
+	.discount-content{
+		width: 300px;
+		margin: auto;
+	}
+	.discount-content > h3{
+		font-size: medium;
+	}
+	.btn1{
+		display: flex;
+		justify-content: start;
+	}
+	#footer-container > .rows{
+		display: grid;
+		grid-template-columns: repeat(5,1fr);
+		margin: auto;
+	}
+	.hide > a{
+		display: none;
+	}
+	footer h4{
+		font-size:small;
+		display: inline;
+		}
+		#cycle{
+			width: 90%;
+			display: grid;
+			grid-template-columns: repeat(1,1fr);
+			margin:auto;
+			margin-top: 40px;
+		}
+		#cycle > .cycle-content{
+            padding-left: 10px;
+		}
+		#cycle h1{
+			font-size: medium;
+		}
+		#cycle > .cycle-img{
+			width: 100%;
+		}
+		#cycle .cycle-img > img{
+			width: 100%;
+			height: 160px;
+			padding-top: 10px;
+		}
+
+		#fitness-gedgets{
+			margin-top: 40px;
+			height: 130px;
+			padding-left: 10px;
+		}
+		#fitness-gedgets > h1{
+			font-size: medium;
+		}
+
 }
 
 
