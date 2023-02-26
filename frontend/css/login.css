@@ -1,6 +1,56 @@
+.container-fluid > a> img{
+	height: 50px;
+	width: 90px;
+	margin: auto;
+	border-radius: 5px;
+}
 .navbar{
 	background-color: #9bdef3;
+	height: 100px;
 }
+#signup-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 90vh;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 50px;
+}
+#signup{
+    width: 80%;
+    height: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+#email-form{
+    padding-top: 10px;
+	margin-top: 90px;
+}
+
+.floatingInput{
+    padding-left: 10px;
+}
+
 .btn{
-	color: black;
+	border:1px solid #08962c;
+	color: #08962c;
+	height: 55px;
+	width: 488px;
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 5px;
+}
+.btn:hover{
+	color: white;
+	background-color: #08962c;
+}
+
+.row{
+    padding-top: 90px;
+}
+.form-control{
+    height: 20px;
 }
